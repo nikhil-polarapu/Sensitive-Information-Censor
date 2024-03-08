@@ -1,7 +1,6 @@
 import argparse
 import glob
 import spacy
-import en_core_web_md
 import re
 from warnings import filterwarnings
 
@@ -20,11 +19,10 @@ def replaceString(string):
     return char * (len(string))
 
 def censor(input, names, dates, phones, addresses, output, stats):
-    nlp = en_core_web_md.load()
+    #nlp = en_core_web_md.load()
+    nlp = spacy.load('en_core_web_md')
     files = glob.glob(input)
-    readFiles = []
     for file in files:
-        print(file)
         data = readFile(file)
         doc = nlp(data)
         for ent in doc.ents:
@@ -60,14 +58,3 @@ if(__name__ == '__main__'):
     args = parser.parse_args()
 
     censor(args.input, args.names, args.dates, args.phones, args.address, args.output, args.stats)
-
-    # if(args.input):
-    #     print(args.input)
-    # print(args.names)
-    # print(args.dates)
-    # print(args.phones)
-    # print(args.address)
-    # if(args.output):
-    #     print(args.output)
-    # if(args.stats):
-    #     print(args.stats)
