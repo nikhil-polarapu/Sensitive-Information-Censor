@@ -42,7 +42,6 @@ def writeStatsDefault(stats, statistics):
             f.write('\n')
 
 def censor(input, names, dates, phones, addresses, output, stats):
-    #nlp = en_core_web_md.load()
     nlp = spacy.load('en_core_web_md')
     files = glob.glob(input)
     statistics_1 = [['Type', 'Count'], ['Name', 0], ['Date', 0], ['Phone', 0], ['Adress', 0]]
@@ -115,7 +114,7 @@ if(__name__ == '__main__'):
     parser.add_argument("--phones", action="store_true", required=False, help="Should phone numbers be censored?")
     parser.add_argument("--address", action="store_true", required=False, help="Should addresses be censored?")
     parser.add_argument("--output", type=str, required=True, help="Output file directory.")
-    parser.add_argument("--stats", type=str, required=True, help="Input either the name of a file or special files (stderr, stdout) to write summary to.")
+    parser.add_argument("--stats", type=str, required=True, help="Input either the name of a file or special files (stderr, stdout) to write the summary to.")
      
     args = parser.parse_args()
 
