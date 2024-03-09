@@ -115,7 +115,7 @@ if(__name__ == '__main__'):
     parser.add_argument("--phones", action="store_true", required=False, help="Should phone numbers be censored?")
     parser.add_argument("--address", action="store_true", required=False, help="Should addresses be censored?")
     parser.add_argument("--output", type=str, required=True, help="Output file directory.")
-    parser.add_argument("--stats", type=str, required=True, help="Input either the name of a file or special files (stderr, stdout) to write the summary to.")
+    parser.add_argument("--stats", type=str, required=True, help="Input either the name of a file or special files (stderr, stdout) to write summary to.")
      
     args = parser.parse_args()
 
