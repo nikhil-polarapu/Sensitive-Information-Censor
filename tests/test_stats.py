@@ -1,11 +1,13 @@
-from censoror import censor, readFile
+from assignment1.main import censor, readFile
 import pytest
 import os
 
+# Testcase to check if a proper stats file is being created.
 def test_statsCreation():
     censor('tmp/1.', True, True, True, True, 'output/', 'stats')
     assert True if os.path.isfile('stats') else False
 
+# Testcase to check if the created stats has the correct columns.
 def test_statsColumns():
     censor('tmp/1.', True, True, True, True, 'output/', 'stats')
     data = readFile('stats')
