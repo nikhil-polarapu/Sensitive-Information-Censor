@@ -1,12 +1,8 @@
-# cis6930sp24 -- Assignment1
+# Sensitive Information Censor
 
-Name: Nikhil Polarapu \
-UFID: 16049519 \
-Email: spolarapu@ufl.edu
+# Project Description
 
-# Assignment Description
-
-In this assignment we write a program that accepts plain text documents, detects sensitive information and censors them. Sensitive information includes the following values.
+In this project we write a program that accepts plain text documents, detects sensitive information and censors them. Sensitive information includes the following values.
 
 - Names
 - Dates
